@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: employee-service
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      enabled: true
+      uri: "http://localhost:8888"
+    import-check:
+      enabled: false
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+
